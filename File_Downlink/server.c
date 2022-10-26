@@ -102,7 +102,7 @@ int main(int argc, char** argv)
 		int fpsize = fread(send_buff, 1, 1024, file);
 		nsize += fpsize;
 		printf("[server] file size %dB | send to %dB\n", fsize, nsize);
-		send(server_sock, send_buff, fpsize, 0);
+		send(client_sock, send_buff, fpsize, 0);
 	}
 
 	printf("[server] sending file finished\n");
