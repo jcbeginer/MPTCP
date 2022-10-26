@@ -28,7 +28,7 @@ int main(int argc, char** argv)
 {
 	int PORT;
 	//const char* FILE_NAME = "recv_file";
-	const char* File_PATH;
+	const char* F_PATH;
 
 	int server_sock, client_sock;
 	struct sockaddr_in server_addr, client_addr;
