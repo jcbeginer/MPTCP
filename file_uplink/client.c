@@ -89,7 +89,7 @@ int main(int argc, char** argv)
    	char filename[1024] = "";
     	time_t now = time(NULL);
     	struct tm *t = localtime(&now);
-	strftime(filename, sizeof(filename)-1, "./logging/video_analytics_client_log_%Y%m%d_%H%M%S.txt", t);
+	strftime(filename, sizeof(filename)-1, "./logging/file_transfer_client_log_%Y%m%d_%H%M%S.txt", t);
     	FILE *log_file = fopen(filename, "a");
     	if (log_file == NULL) {
         	perror("[client] fopen() ");
