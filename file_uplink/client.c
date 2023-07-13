@@ -2,8 +2,8 @@
  * MPTCP Socket API Test App
  * File Sender(Client)
  * 
- * @date	: 2021-04-29(Thu)
- * @author	: Ji-Hun(INSLAB)
+ * @date	: 2023-07-13
+ * @author	: Woosung(NETLAB)
  */
 
 #include <stdio.h>
@@ -15,6 +15,8 @@
 #include <netinet/in.h>
 #include <netinet/tcp.h>
 #include <arpa/inet.h>
+#include <sys/stat.h>
+#include <time.h>
 
 #include "../header/mptcp.h"
 
