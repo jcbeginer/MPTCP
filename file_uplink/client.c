@@ -113,7 +113,7 @@ int main(int argc, char** argv)
     	clock_gettime(CLOCK_REALTIME, &end);
     
     	// Write packet information
-    	fprintf("sent_timestamp: %ld.%ld, received_timestamp: %ld.%ld, received-send delay: %ld.%ld, size: %d\n", start.tv_sec, start.tv_nsec, end.tv_sec, end.tv_nsec, end.tv_sec-start.tv_sec,end.tv_nsec-start.tv_nsec, fsize);
+    	fprintf(log_file,"sent_timestamp: %ld.%ld, received_timestamp: %ld.%ld, received-send delay: %ld.%ld, size: %d\n", start.tv_sec, start.tv_nsec, end.tv_sec, end.tv_nsec, end.tv_sec-start.tv_sec,end.tv_nsec-start.tv_nsec, fsize);
 
     //...
 	fclose(file);
