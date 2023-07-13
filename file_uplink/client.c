@@ -83,14 +83,39 @@ int main(int argc, char** argv)
 	fsize = get_fsize(file);
 
 	printf("[client] sending file...(%s)\n", FILE_PATH); 
+	// Open log file
+   	char filename[1024] = "";
+    	time_t now = time(NULL);
+    	struct tm *t = localtime(&now);
+	strftime(filename, sizeof(filename)-1, "./logging/video_analytics_client_log_%Y%m%d_%H%M%S.txt", t);
+    	FILE *log_file = fopen(filename, "a");
+    	if (log_file == NULL) {
+        	perror("[client] fopen() ");
+        	return -1;
+    }	
+
+	// Write log start entry
+	//fprintf(log_file, "start--------------------------------------------\n");
+	// capture start time
+	struct timespec start, end;
+    	clock_gettime(CLOCK_REALTIME, &start);
+
+	
 	while(nsize!=fsize){
 		int fpsize = fread(send_buff, 1, 1024, file);
 		nsize += fpsize;
 		printf("[client] file size %dB | send to %dB\n", fsize, nsize);
 		send(sock, send_buff, fpsize, 0);
 	}
-	
+	// Capture end time
+    	clock_gettime(CLOCK_REALTIME, &end);
+    
+    	// Write packet information
+    	fprintf(sent_timestamp: %ld.%ld, received_timestamp: %ld.%ld, received-send delay: %ld.%ld, size: %d\n", start.tv_sec, start.tv_nsec, end.tv_sec, end.tv_nsec, end.tv_sec-start.tv_sec,end.tv_nsec-start.tv_nsec, fsize);
+
+    //...
 	fclose(file);
+	fclose(log_file)
 	close(sock);
 
 	return 0;
