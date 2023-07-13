@@ -115,7 +115,7 @@ int main(int argc, char** argv)
 
     //...
 	fclose(file);
-	fclose(log_file)
+	fclose(log_file);
 	close(sock);
 
 	return 0;
