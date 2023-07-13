@@ -92,9 +92,8 @@ int main(int argc, char** argv)
 	strftime(filename, sizeof(filename)-1, "./logging/file_transfer_client_log_%Y%m%d_%H%M%S.txt", t);
     	FILE *log_file = fopen(filename, "a");
     	if (log_file == NULL) {
-        	perror("[client] fopen() ");
-        	return -1;
-    }	
+        	printf("there is no file, so I make new one")
+  	}	
 
 	// Write log start entry
 	//fprintf(log_file, "start--------------------------------------------\n");
