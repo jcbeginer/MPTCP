@@ -9,6 +9,7 @@ gcc -o client client.c
 ---------
 How to run?
 in server (do first, echo & file & packet_scheduler & path_manager & subflows_info)
+
 ./server [port number]
 ----------
 in client (echo)
